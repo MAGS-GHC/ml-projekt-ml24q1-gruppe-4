@@ -1,5 +1,11 @@
 # ml-projekt-ml24q1-gruppe-4
 
+Models created in this project:
+
+-   Age prediction
+-   Gender prediction
+-   Race prediction
+
 The dataset have not been added to github due to the size of it.
 
 To setup the dataset:
@@ -8,3 +14,8 @@ To setup the dataset:
 -   After downloading the dataset the extract the UTKFace folder from it, we're not using the other two folders within the dataset zip archive.
 -   Place the extracted UTKFace folder within the Dataset folder.
 -   The data should be loaded, but if there's any issues with it, then try running the dataPreProcessor script.
+
+Contributors:
+
+-   Kasper Roager Christensen
+-   Niklas Brasch Pedersen
