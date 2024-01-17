@@ -164,7 +164,7 @@ model_history = model.fit(
     validation_data=test_generator,
     validation_steps=validation_steps
 )
-model_path = "./Dataset/UTKFace/gender_predictor_model.h5"
+model_path = "./gender_predictor_model.h5"
 model.save(model_path)
 
 '''

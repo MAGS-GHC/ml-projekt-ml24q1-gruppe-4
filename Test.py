@@ -14,7 +14,7 @@ from tensorflow.keras.models import Model, load_model
 from pathlib import Path
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
-model_path = "./Dataset/UTKFace/gender_predictor_model.h5"
+model_path = "./gender_predictor_model.h5"
 model = load_model(model_path)
 
 gender_dict = {0: "Male", 1: "Female"}
