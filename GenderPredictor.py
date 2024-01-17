@@ -20,18 +20,11 @@ if len(physical_devices) == 0:
 else:
     print("GPU devices available:", physical_devices)
 
-# Specify the correct directory path
 path = Path("./Dataset/UTKFace")
-#path = Path(r"C:\Users\Niklas Pedersen\Downloads\UTKFace")
 
-# Use glob to get all files with the '.jpg' extension
 jpg_files = list(path.glob('*.jpg'))
 
-# Extract file names
 filenames = list(map(lambda x: x.name, jpg_files))
-
-#print(len(filenames))
-#print(filenames[:3])
 
 np.random.seed(10)
 np.random.shuffle(filenames)
@@ -52,24 +45,7 @@ gender_dict = {0:"Male",1:"Female"}
 df = df.astype({'gender': 'int32'})
 print(df.dtypes)
 
-#img = Image.open("./Dataset/UTKFace/" + df.image[1])
-#plt.imshow(img)
-#plt.show()
-
 image_path = "./Dataset/UTKFace/"
-'''
-files = df.iloc[0:20]
-plt.figure(figsize=(15,15))
-for index, file, gender in files.itertuples():
-    plt.subplot(5,5, index+1)
-    img = load_img(image_path+file)
-    img = np.array(img)
-    plt.imshow(img)
-    plt.title(f"Gender: {gender_dict[gender]}")
-    plt.axis('off')
-
-plt.show()
-'''
 
 train, test = train_test_split(df, test_size=0.20, random_state=42)
 print(train.head())
