@@ -3,4 +3,3 @@ Dataset/*
 !Dataset/*.png
 !Dataset/*.jpg
 !Dataset/README.md
-Models/*
