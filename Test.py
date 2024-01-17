@@ -22,7 +22,7 @@ gender_dict = {0: "Male", 1: "Female"}
 images_path = "./Dataset/"
 
 # Get a list of all image files in the directory
-image_files = [f for f in os.listdir(images_path) if f.lower().endswith(('.jpg', '.png')) and os.path.isfile(os.path.join(images_path, f))]
+image_files = [f for f in os.listdir(images_path) if f.lower().endswith(('.jpg')) and os.path.isfile(os.path.join(images_path, f))]
 
 for image_file in image_files:
     # Load and preprocess each image
