@@ -39,5 +39,4 @@ for image_file in image_files:
     pred_gender = gender_dict[round(predictions[0][0])]
 
     print(f"Image: {image_file}, Predicted Gender: {pred_gender}")
-    print("Complete Prediction Array:", predictions)
     print("\n")
