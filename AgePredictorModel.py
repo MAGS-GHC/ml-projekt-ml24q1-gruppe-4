@@ -16,27 +16,12 @@ dataset = pd.read_csv("./Dataset/data.csv", index_col=0).astype({'age': 'float32
 dataset.drop(columns=['gender','race'], inplace=True)
 print(dataset.head())
 
-# Load image data
-IMAGE_SHAPE = (128, 128, 3)
-
-# print("loading image data.")
-# image_data = []
-
-# for index, datarow in tqdm(dataset.iterrows(), total=len(dataset)):
-#     image = load_img(datarow['filePath'], target_size=(128,128))
-#     image = np.array(image)
-#     image_data.append(image)
-
-# image_data = np.array(image_data)
-
-# print(len(image_data))
-# print(image_data.shape)
 
 # show age distrobution histogram.
 print("Showing general statistics")
-# plt.hist(dataset['age'], bins=100)
-# plt.title("Age distrobution")
-# plt.show()
+plt.hist(dataset['age'], bins=100)
+plt.title("Age distrobution")
+plt.show()
 
 # split age into predefined age groups.
 print("Splitting ages into age groups")
@@ -96,7 +81,6 @@ dataset.drop(columns=['age'], inplace=True)
 
 # splitting data into training and test set
 train, test = train_test_split(dataset, test_size=0.1, random_state=2)
-# train_features, test_features = train_test_split(image_data, test_size=0.1, random_state=1)
 
 
 # prep labels.
@@ -105,6 +89,7 @@ test_labels = test['ageGroups']
 
 # prep featueres.
 print("loading image data.")
+IMAGE_SHAPE = (128, 128, 3)
 
 train_features = []
 test_features = []
@@ -158,7 +143,7 @@ agePredictionModel.add(Dropout(0.4))
 agePredictionModel.add(Dense(units=256, activation='relu'))
 agePredictionModel.add(Dense(units=128, activation='relu'))
 agePredictionModel.add(Dropout(0.4))
-agePredictionModel.add(Dense(units=12, activation=keras.activations.sigmoid, kernel_initializer=keras.initializers.VarianceScaling()))
+agePredictionModel.add(Dense(units=12, activation=keras.activations.softmax, kernel_initializer=keras.initializers.VarianceScaling()))
 
 # compiling the model
 adam_optimizer = keras.optimizers.Adam(learning_rate=0.0005)

@@ -9,7 +9,7 @@ model = keras.models.load_model('Models/agePredictionModel.keras')
 # dlib face detector
 detector = dlib.get_frontal_face_detector()
 
-image = cv2.imread('TestImages/Mathias-25.jpg')
+image = cv2.imread('Dataset/Mathias-25.png')
 
 # face model classifier and model for selec best photos
 faces = detector(image, 1)
