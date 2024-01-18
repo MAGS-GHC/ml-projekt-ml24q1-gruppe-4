@@ -1,3 +1,5 @@
 Dataset/*
 !Dataset/*.csv
+!Dataset/*.png
+!Dataset/*.jpg
 !Dataset/README.md
